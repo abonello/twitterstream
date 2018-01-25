@@ -4,7 +4,8 @@ from tweepy.streaming import StreamListener
 from keys_and_secrets import get_auth, twitter_api
 
 
-keyword_list = ['python', 'java', 'c#', 'ruby'] #track list
+#keyword_list = ['python', 'java', 'c#', 'ruby'] #track list
+keyword_list = ['brexit']
  
 class MyStreamListener(StreamListener):
  
