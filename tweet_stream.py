@@ -1,4 +1,5 @@
 from tweepy import Stream
+from tweepy import OAuthHandler
 from tweepy.streaming import StreamListener
 from keys_and_secrets import get_auth, twitter_api
 
@@ -8,6 +9,7 @@ keyword_list = ['python', 'java', 'c#', 'ruby'] #track list
 class MyStreamListener(StreamListener):
  
     def on_data(self, data):
+        print "on_data is called"
         try:
             with open('tweet_mining.json', 'a') as tweet_file:
                 tweet_file.write(data)
@@ -20,8 +22,9 @@ class MyStreamListener(StreamListener):
         print status
         return True
 
+#api = twitter_api()
+auth = get_auth()
 
-auth = get_auth
- 
+print " About to create a child class of StreamListener"
 twitter_stream = Stream(auth, MyStreamListener())
 twitter_stream.filter(track=keyword_list)
