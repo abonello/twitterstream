@@ -5,3 +5,4 @@ lib/
 pip-selfcheck.json
 .idea
 .DS_Store
+keys_and_secrets.py
